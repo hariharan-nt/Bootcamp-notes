@@ -1,0 +1,64 @@
+MongoDB shell commands
+----------------------
+
+
+Mongo - enters into the mongoDB shell
+1. show dbs   -     show database names
+> show dbs
+admin  0.000GB
+local  0.000GB
+
+2.
+> use demo   ---> givin a db name which doesn't exist creates a new db
+switched to db demo
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+---> (demo db is empty and doesnt show up in the show dbs command)
+
+3.
+
+> db.dogs.insert({name:"Danny", breed:"indian"})
+WriteResult({ "nInserted" : 1 })
+> show collections
+dogs
+
+4. 
+> db.dogs.find()
+{ "_id" : ObjectId("5b29f24d21c31bb4ba7185ca"), "name" : "Danny", "breed" : "indian" }
+
+object id is unique
+
+5.
+> db.dogs.find()
+{ "_id" : ObjectId("5b29f24d21c31bb4ba7185ca"), "name" : "Danny", "breed" : "indian" }
+{ "_id" : ObjectId("5b29f29621c31bb4ba7185cb"), "name" : "nila", "breed" : "indian spitz" }
+> db.dogs.find({name: "nila"})
+{ "_id" : ObjectId("5b29f29621c31bb4ba7185cb"), "name" : "nila", "breed" : "indian spitz" }
+
+6.
+
+> db.dogs.find()
+{ "_id" : ObjectId("5b29f24d21c31bb4ba7185ca"), "name" : "Danny", "breed" : "indian" }
+{ "_id" : ObjectId("5b29f29621c31bb4ba7185cb"), "name" : "nila", "breed" : "indian spitz" }
+{ "_id" : ObjectId("5b29f2f021c31bb4ba7185cc"), "name" : "kulla", "breed" : "indian mongrel" }
+> db.dogs.update({name:"kulla"},{breed:"indian"})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.dogs.find()
+{ "_id" : ObjectId("5b29f24d21c31bb4ba7185ca"), "name" : "Danny", "breed" : "indian" }
+{ "_id" : ObjectId("5b29f29621c31bb4ba7185cb"), "name" : "nila", "breed" : "indian spitz" }
+{ "_id" : ObjectId("5b29f2f021c31bb4ba7185cc"), "breed" : "indian" }
+> db.dogs.update({name:"Danny"},{$set:{name:"Tater" , isCute: true}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.dogs.find()
+{ "_id" : ObjectId("5b29f24d21c31bb4ba7185ca"), "name" : "Tater", "breed" : "indian", "isCute" : true }
+{ "_id" : ObjectId("5b29f29621c31bb4ba7185cb"), "name" : "nila", "breed" : "indian spitz" }
+{ "_id" : ObjectId("5b29f2f021c31bb4ba7185cc"), "breed" : "indian" }
+
+> db.dogs.remove({breed: "indian"})
+WriteResult({ "nRemoved" : 2 })
+> db.dogs.find()
+{ "_id" : ObjectId("5b29f29621c31bb4ba7185cb"), "name" : "nila", "breed" : "indian spitz" }
+
+
