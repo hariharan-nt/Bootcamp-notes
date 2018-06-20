@@ -1,0 +1,7 @@
+#Mongoose - Object modeling for node js
+
+
+npm install mongoose
+
+mongoose is an odm(object data mapper) {using js to interact with db. like a js layer on mong
+db}.
