@@ -1,0 +1,19 @@
+#RESTful Routing
+
+REST - Representational State Transfer
+REST is just a pattern for mapping our routes
+REST a mapping between HTTP routes and CRUD
+CRUD- Create REad update Destroy (ex:  i create a rec, read it, del,update it)
+
+There are 7 REST routes(RESTful routing chart)
+
+Name    Path        HTTP Verb         Purpose
+------------------------------------------------
+Index   /dogs           GET         List All dogs
+New     /dogs/new       GET         Show new dog form
+Create  /dogs           POST        Create a new dog, then redirect somewhere
+Show    /dogs/:id       GET         Show info about one specific odg
+Edit    /dogs/:id/edit  GET         Show edit form for one dog
+Update  /dogs/:id       PUT         Update a specific dog , then reidrect 
+Destroy /dogs/:id       DELETE      Delete a particular dog
+--------------------------------------------------------------------------
