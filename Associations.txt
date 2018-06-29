@@ -1,0 +1,12 @@
+#Associations
+
+1 to 1 , 1 to many & many to many relationships or assocations
+
+Having associated data.
+ex: uploading photo to social media (1 to many)
+User can have many posts(1 to many)
+Posts can have only 1 user posting it( 1 to 1)
+like campgrounds having multiple comments
+
+Connecting these datas by 
+1.embedding data and 3. referencing data
