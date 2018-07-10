@@ -1,0 +1,9 @@
+#### Authentication #########
+
+Passport js - http://www.passportjs.org/
+middleware for node used for authentication
+
+Passport-local - https://github.com/jaredhanson/passport-local
+Username and pwd auth strategy for passport and nodejs
+
+passport-local-mongoose - https://github.com/saintedlama/passport-local-mongoose
